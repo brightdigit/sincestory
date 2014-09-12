@@ -2,7 +2,7 @@
 platform :ios, "7.1"
 
 target "SinceStory" do
-
+pod 'google-plus-ios-sdk', '~> 1.7'
 end
 
 target "SinceStoryTests" do

@@ -15,6 +15,7 @@
 		7B0173CF19C24FB800D79215 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0173CD19C24FB800D79215 /* LaunchScreen.xib */; };
 		7B0173DB19C24FB800D79215 /* SinceStoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0173DA19C24FB800D79215 /* SinceStoryTests.swift */; };
 		7B0173E519C2519900D79215 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7B0173E419C2519900D79215 /* Podfile */; };
+		FB24901663424AC8A79827C9 /* libPods-SinceStory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFB253289C447D2BF37B6BE /* libPods-SinceStory.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		232A1E2D63524AD994E56896 /* Pods-SinceStory.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinceStory.xcconfig"; path = "Pods/Pods-SinceStory.xcconfig"; sourceTree = "<group>"; };
+		2BFB253289C447D2BF37B6BE /* libPods-SinceStory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SinceStory.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0173BC19C24FB700D79215 /* SinceStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinceStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0173C019C24FB700D79215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B0173C119C24FB700D79215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +42,8 @@
 		7B0173D419C24FB800D79215 /* SinceStoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SinceStoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0173D919C24FB800D79215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B0173DA19C24FB800D79215 /* SinceStoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinceStoryTests.swift; sourceTree = "<group>"; };
-		7B0173E419C2519900D79215 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		7B0173E419C2519900D79215 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7B4D3DF819C25899009726ED /* bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB24901663424AC8A79827C9 /* libPods-SinceStory.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,13 +65,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38F41AA2961D482C83C39576 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BFB253289C447D2BF37B6BE /* libPods-SinceStory.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7B0173B319C24FB700D79215 = {
 			isa = PBXGroup;
 			children = (
+				7B4D3DF819C25899009726ED /* bridge.h */,
 				7B0173E419C2519900D79215 /* Podfile */,
 				7B0173BE19C24FB700D79215 /* SinceStory */,
 				7B0173D719C24FB800D79215 /* SinceStoryTests */,
 				7B0173BD19C24FB700D79215 /* Products */,
+				232A1E2D63524AD994E56896 /* Pods-SinceStory.xcconfig */,
+				38F41AA2961D482C83C39576 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,9 +141,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B0173DE19C24FB800D79215 /* Build configuration list for PBXNativeTarget "SinceStory" */;
 			buildPhases = (
+				085DFC5070EA4BAEA8A4CCDB /* Check Pods Manifest.lock */,
 				7B0173B819C24FB700D79215 /* Sources */,
 				7B0173B919C24FB700D79215 /* Frameworks */,
 				7B0173BA19C24FB700D79215 /* Resources */,
+				D2D6595CB004459B8F78D26D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +231,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		085DFC5070EA4BAEA8A4CCDB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D2D6595CB004459B8F78D26D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-SinceStory-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7B0173B819C24FB700D79215 /* Sources */ = {
@@ -344,23 +395,27 @@
 		};
 		7B0173DF19C24FB800D79215 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 232A1E2D63524AD994E56896 /* Pods-SinceStory.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SinceStory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = bridge.h;
 			};
 			name = Debug;
 		};
 		7B0173E019C24FB800D79215 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 232A1E2D63524AD994E56896 /* Pods-SinceStory.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SinceStory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = bridge.h;
 			};
 			name = Release;
 		};
