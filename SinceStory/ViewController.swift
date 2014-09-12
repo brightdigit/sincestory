@@ -38,7 +38,11 @@ class ViewController: UIViewController, GPPSignInDelegate {
   }
 
   func finishedWithAuth(auth: GTMOAuth2Authentication!, error: NSError!) {
-    
+    println(error)
+  }
+  
+  func didDisconnectWithError(error: NSError!) {
+    println(error)
   }
 }
 
