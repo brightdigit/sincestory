@@ -8,7 +8,7 @@
 
 import UIKit
 
-let clientId = ""
+let clientId = "235093977323-5qh0pdc7180anqb3k291d8e9h0bb8iej.apps.googleusercontent.com"
 
 class ViewController: UIViewController, GPPSignInDelegate {
 
