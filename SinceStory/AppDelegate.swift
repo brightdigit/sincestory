@@ -110,5 +110,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, openURL url: NSURL, sourceApplication: String, annotation: AnyObject?) -> Bool {
     return GPPURLHandler.handleURL(url, sourceApplication: sourceApplication, annotation: annotation)
   }
+  /*
+- (BOOL)application:(UIApplication *)application
+openURL:(NSURL *)url
+sourceApplication:(NSString *)sourceApplication
+annotation:(id)annotation {
+// attempt to extract a token from the url
+return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+}
+*/
 }
 

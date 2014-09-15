@@ -1,0 +1,9 @@
+[submodule "Libraries/MailCore2"]
+	path = Libraries/MailCore2
+	url = https://github.com/MailCore/MailCore2.git
+[submodule "Libraries/google-api-objectivec-client-read-only"]
+	path = Libraries/google-api-objectivec-client-read-only
+	url = https://github.com/brightdigit/google-api-objectivec-client.git
+[submodule "Libraries/gtm-http-fetcher"]
+	path = Libraries/gtm-http-fetcher
+	url = https://github.com/brightdigit/gtm-http-fetcher.git
