@@ -11,6 +11,6 @@
 
 #import <GooglePlus/GooglePlus.h>
 #import <GoogleOpenSource/GoogleOpenSource.h>
-#import <FacebookSDK/FacebookSDK.h>
+#import <FacebookSDK.h>
 
 #endif
