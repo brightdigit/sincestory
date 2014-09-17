@@ -30,6 +30,12 @@ class ViewController: UIViewController, GPPSignInDelegate {
     signIn.delegate = self;
     // Do any additional setup after loading the view, typically from a nib.
     signIn.trySilentAuthentication()
+    
+    /*
+FBLoginView *loginView = [[FBLoginView alloc] init];
+loginView.center = self.view.center;
+[self.view addSubview:loginView];
+*/
   }
 
   override func didReceiveMemoryWarning() {
