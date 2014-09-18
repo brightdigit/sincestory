@@ -39,7 +39,7 @@ class Configuration {
       return result
     })
     
-    let googleSettings = json["google"]
+    let googleSettings:AnyObject? = json["google"]
     
     self.google = Google(settings: googleSettings as Dictionary<String, String>)
   }
