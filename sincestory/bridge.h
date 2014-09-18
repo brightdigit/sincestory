@@ -10,5 +10,6 @@
 #define sincestory_bridge_h
 
 #import "GTLGmail.h"
+#import "GTMOAuth2ViewControllerTouch.h"
 
 #endif

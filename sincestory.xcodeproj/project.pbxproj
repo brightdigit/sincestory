@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B78CDD819CA1D83006507FC /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B78CDD719CA1D83006507FC /* GTMOAuth2ViewTouch.xib */; };
+		7B78CDDA19CA208C006507FC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B78CDD919CA208C006507FC /* SystemConfiguration.framework */; };
 		7BA50AFB19CA01E600E92EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA50AFA19CA01E600E92EB4 /* AppDelegate.swift */; };
 		7BA50AFE19CA01E600E92EB4 /* sincestory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BA50AFC19CA01E600E92EB4 /* sincestory.xcdatamodeld */; };
 		7BA50B0019CA01E600E92EB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA50AFF19CA01E600E92EB4 /* ViewController.swift */; };
@@ -14,8 +16,9 @@
 		7BA50B0519CA01E600E92EB4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BA50B0419CA01E600E92EB4 /* Images.xcassets */; };
 		7BA50B0819CA01E600E92EB4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA50B0619CA01E600E92EB4 /* LaunchScreen.xib */; };
 		7BA50B1419CA01E600E92EB4 /* sincestoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA50B1319CA01E600E92EB4 /* sincestoryTests.swift */; };
-		7BA50B9E19CA099100E92EB4 /* GTLGmail_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA50B9D19CA099100E92EB4 /* GTLGmail_Sources.m */; };
 		7BA50BA419CA09D400E92EB4 /* libGTLTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA50BA319CA09D400E92EB4 /* libGTLTouchStaticLib.a */; };
+		7BA50BA619CA0D9300E92EB4 /* GTLGmail_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA50BA519CA0D9300E92EB4 /* GTLGmail_Sources.m */; };
+		7BA50BA819CA0FE100E92EB4 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BA50BA719CA0FE100E92EB4 /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B78CDD719CA1D83006507FC /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "modules/google-api-objectivec-client/Source/OAuth2/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = SOURCE_ROOT; };
+		7B78CDD919CA208C006507FC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7BA50AF519CA01E600E92EB4 /* sincestory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sincestory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA50AF919CA01E600E92EB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BA50AFA19CA01E600E92EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,8 +46,9 @@
 		7BA50B1219CA01E600E92EB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BA50B1319CA01E600E92EB4 /* sincestoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sincestoryTests.swift; sourceTree = "<group>"; };
 		7BA50B3919CA05F900E92EB4 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
-		7BA50B9D19CA099100E92EB4 /* GTLGmail_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGmail_Sources.m; path = "modules/google-api-objectivec-client/Source/Services/Gmail/Gmail/GTLGmail_Sources.m"; sourceTree = SOURCE_ROOT; };
 		7BA50BA319CA09D400E92EB4 /* libGTLTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGTLTouchStaticLib.a; path = "modules/google-api-objectivec-client/Source/build/Debug-iphoneos/libGTLTouchStaticLib.a"; sourceTree = "<group>"; };
+		7BA50BA519CA0D9300E92EB4 /* GTLGmail_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGmail_Sources.m; path = "modules/google-api-objectivec-client/Source/Services/Gmail/Generated/GTLGmail_Sources.m"; sourceTree = "<group>"; };
+		7BA50BA719CA0FE100E92EB4 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B78CDDA19CA208C006507FC /* SystemConfiguration.framework in Frameworks */,
 				7BA50BA419CA09D400E92EB4 /* libGTLTouchStaticLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +74,7 @@
 		7BA50AEC19CA01E500E92EB4 = {
 			isa = PBXGroup;
 			children = (
+				7B78CDD919CA208C006507FC /* SystemConfiguration.framework */,
 				7BA50BA119CA09B900E92EB4 /* modules */,
 				7BA50AF719CA01E600E92EB4 /* sincestory */,
 				7BA50B1019CA01E600E92EB4 /* sincestoryTests */,
@@ -86,6 +94,7 @@
 		7BA50AF719CA01E600E92EB4 /* sincestory */ = {
 			isa = PBXGroup;
 			children = (
+				7B78CDD719CA1D83006507FC /* GTMOAuth2ViewTouch.xib */,
 				7BA50AFA19CA01E600E92EB4 /* AppDelegate.swift */,
 				7BA50AFF19CA01E600E92EB4 /* ViewController.swift */,
 				7BA50B0119CA01E600E92EB4 /* Main.storyboard */,
@@ -102,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				7BA50AF919CA01E600E92EB4 /* Info.plist */,
+				7BA50BA719CA0FE100E92EB4 /* Keys.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -134,8 +144,8 @@
 		7BA50BA219CA09BE00E92EB4 /* google */ = {
 			isa = PBXGroup;
 			children = (
+				7BA50BA519CA0D9300E92EB4 /* GTLGmail_Sources.m */,
 				7BA50BA319CA09D400E92EB4 /* libGTLTouchStaticLib.a */,
-				7BA50B9D19CA099100E92EB4 /* GTLGmail_Sources.m */,
 			);
 			name = google;
 			sourceTree = "<group>";
@@ -220,6 +230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B78CDD819CA1D83006507FC /* GTMOAuth2ViewTouch.xib in Resources */,
+				7BA50BA819CA0FE100E92EB4 /* Keys.plist in Resources */,
 				7BA50B0319CA01E600E92EB4 /* Main.storyboard in Resources */,
 				7BA50B0819CA01E600E92EB4 /* LaunchScreen.xib in Resources */,
 				7BA50B0519CA01E600E92EB4 /* Images.xcassets in Resources */,
@@ -241,7 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BA50B0019CA01E600E92EB4 /* ViewController.swift in Sources */,
-				7BA50B9E19CA099100E92EB4 /* GTLGmail_Sources.m in Sources */,
+				7BA50BA619CA0D9300E92EB4 /* GTLGmail_Sources.m in Sources */,
 				7BA50AFE19CA01E600E92EB4 /* sincestory.xcdatamodeld in Sources */,
 				7BA50AFB19CA01E600E92EB4 /* AppDelegate.swift in Sources */,
 			);
