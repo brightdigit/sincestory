@@ -8,7 +8,7 @@
 
 import UIKit
 //import Foundation
-
+/*
 func readDictionaryFromFile(filePath:String) -> Dictionary<String,AnyObject!>? {
   var anError : NSError?
   
@@ -40,31 +40,23 @@ func readDictionaryFromFile(filePath:String) -> Dictionary<String,AnyObject!>? {
   }
   return nil
 }
+*/
 
 class ViewController: UIViewController {
 
   var gmailService:GTLServiceGmail
+  
+  /*
   var cid_str:String = ""
   var cs_str:String = ""
 
-  
+  */
   required init(coder aDecoder: NSCoder) {
 
     gmailService = GTLServiceGmail()
     
-    /*
-    let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist")!
-    let dict:Dictionary = readDictionaryFromFile(path)!
-    let google = dict["Google"]
-    println(google)
-    if let settings = google as? Dictionary<String, AnyObject!>{
-      let client_id = settings["client_id"]
-      let client_secret = settings["client_secret"]
-      cid_str = client_id as String
-      cs_str = client_secret as String
-      gmailService.authorizer = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName("sincestory", clientID:cid_str, clientSecret:cs_str, error: nil)
-    }
-    */
+    Configuration.current
+
     super.init(coder: aDecoder)
   }
   override func viewDidLoad() {
@@ -86,12 +78,12 @@ class ViewController: UIViewController {
   return authController;
   }
 */
-  
+  /*
   func createAuthController() -> GTMOAuth2ViewControllerTouch {
     var authController = GTMOAuth2ViewControllerTouch(scope:kGTLAuthScopeGmailReadonly,clientID: cid_str, clientSecret: cs_str, keychainItemName:"sincestory", delegate:self, finishedSelector:"viewController:finishedWithAuth:error:")
     return authController
   }
-/*
+
   // Handle completion of the authorization process, and updates the Drive service
   // with the new credentials.
   - (void)viewController:(GTMOAuth2ViewControllerTouch *)viewController
@@ -108,11 +100,11 @@ class ViewController: UIViewController {
   self.driveService.authorizer = authResult;
   }
   }
-  */
   
-  func viewController(viewController:GTMOAuth2ViewControllerTouch,finishedWithAuth authResult:GTMOAuth2Authentication , error:NSError ) {
+  func viewController(viewController:GTMOAuth2ViewControllerTouch,finishedWithAuth authResult://GTMOAuth2Authentication , error:NSError ) {
     
   }
+  */
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -120,7 +112,29 @@ class ViewController: UIViewController {
   }
 
   @IBAction func click(sender:AnyObject) {
-    self.presentViewController(self.createAuthController(), animated: true, completion: nil)
+    //self.presentViewController(self.createAuthController(), animated: true, completion: nil)
+    println("clicked")
   }
 }
+#if false
 
+import UIKit
+
+class ViewController: UIViewController {
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  
+  @IBAction func click (sender:AnyObject?) {
+    
+  }
+}
+  #endif
