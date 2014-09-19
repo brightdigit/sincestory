@@ -46,6 +46,7 @@ class ViewController: UIViewController {
 
   let gmailService:GTLServiceGmail
   let google:Configuration.Google
+  var authController:GTMOAuth2ViewControllerTouch?
   /*
   var cid_str:String = ""
   var cs_str:String = ""
@@ -64,23 +65,12 @@ class ViewController: UIViewController {
 
   }
   
-  /*
-  // Creates the auth controller for authorizing access to Google Drive.
-  - (GTMOAuth2ViewControllerTouch *)createAuthController
-  {
-  GTMOAuth2ViewControllerTouch *authController;
-  authController = [[GTMOAuth2ViewControllerTouch alloc] initWithScope:kGTLAuthScopeDriveFile
-  clientID:kClientID
-  clientSecret:kClientSecret
-  keychainItemName:kKeychainItemName
-  delegate:self
-  finishedSelector:@selector(viewController:finishedWithAuth:error:)];
-  return authController;
-  }
   func createAuthController() -> GTMOAuth2ViewControllerTouch {
-    var authController = GTMOAuth2ViewControllerTouch(scope:kGTLAuthScopeGmailReadonly,clientID: cid_str, clientSecret: cs_str, keychainItemName:"sincestory", delegate:self, finishedSelector:"viewController:finishedWithAuth:error:")
-    return authController
+    self.authController = GTMOAuth2ViewControllerTouch(scope:kGTLAuthScopeGmailReadonly,clientID: google.clientID, clientSecret: google.clientSecret, keychainItemName:"sincestory", delegate:self, finishedSelector:"viewController:finishedWithAuth:error:")
+    return authController!
   }
+  
+  /*
   // Handle completion of the authorization process, and updates the Drive service
   // with the new credentials.
   - (void)viewController:(GTMOAuth2ViewControllerTouch *)viewController
@@ -97,15 +87,41 @@ class ViewController: UIViewController {
   self.driveService.authorizer = authResult;
   }
   }
+  //   - (GTLServiceTicket *)executeQuery:(GTLQuery *)query
+  //                             delegate:(id)delegate
+  //                    didFinishSelector:(SEL)finishedSelector;
+  //
+  // where finishedSelector has a signature of:
+  //
+  //   - (void)serviceTicket:(GTLServiceTicket *)ticket
+  //      finishedWithObject:(id)object
+  //                   error:(NSError *)error;
   */
-  func createAuthController() -> GTMOAuth2ViewControllerTouch {
-    var authController = GTMOAuth2ViewControllerTouch(scope:kGTLAuthScopeGmailReadonly,clientID: google.clientID, clientSecret: google.clientSecret, keychainItemName:"sincestory", delegate:self, finishedSelector:"viewController:finishedWithAuth:error:")
-    return authController
+  func viewController(viewController:GTMOAuth2ViewControllerTouch?,finishedWithAuth authResult:GTMOAuth2Authentication? , error:NSError? ) {
+    if error != nil {
+      println(error)
+      self.gmailService.authorizer = nil
+    } else {
+      let query = GTLQueryGmail.queryForUsersMessagesList() as GTLQueryProtocol?
+      self.gmailService.authorizer = authResult
+      self.gmailService.executeQuery(query,delegate:self, didFinishSelector:"serviceTicket:finishedWithObject:error:")
+      self.dismissViewControllerAnimated(true, completion: nil)
+      
+    }
   }
   
-  func viewController(viewController:GTMOAuth2ViewControllerTouch,finishedWithAuth authResult:GTMOAuth2Authentication , error:NSError ) {
+  func serviceTicket(ticket: GTLServiceTicket?, finishedWithObject object: AnyObject?, error:NSError?) {
+    println(object)
+    if error != nil {
+      
+    } else if let messageResponse = object as GTLGmailListMessagesResponse? {
+      println(messageResponse)
+    }
     
   }
+  //   - (void)serviceTicket:(GTLServiceTicket *)ticket
+  //      finishedWithObject:(id)object
+  //                   error:(NSError *)error;
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()

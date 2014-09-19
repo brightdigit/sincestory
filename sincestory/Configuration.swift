@@ -18,12 +18,16 @@ class Configuration {
     var dictionaries = jsonFiles.map {
       (var filepath) -> NSDictionary  in
       var error: NSError?
+      /*
       if let jsonData = NSData(contentsOfFile: filepath, options: .DataReadingMappedIfSafe, error: &error)
       {
         return NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: &error) as NSDictionary
       } else {
         return NSDictionary()
       }
+*/
+      let jsonData = NSData(contentsOfFile: filepath, options: .DataReadingMappedIfSafe, error: &error)
+      return NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: &error) as NSDictionary
     }
     
     let json = dictionaries.reduce(Dictionary<String,AnyObject>(),{
